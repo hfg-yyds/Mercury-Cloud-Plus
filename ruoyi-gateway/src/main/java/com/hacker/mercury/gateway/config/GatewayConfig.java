@@ -1,6 +1,6 @@
-package org.dromara.gateway.config;
+package com.hacker.mercury.gateway.config;
 
-import org.dromara.gateway.handler.SentinelFallbackHandler;
+import com.hacker.mercury.gateway.handler.SentinelFallbackHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.Ordered;

@@ -1,9 +1,9 @@
-package org.dromara.gateway.filter;
+package com.hacker.mercury.gateway.filter;
 
 import cn.hutool.http.HtmlUtil;
+import com.hacker.mercury.gateway.config.properties.XssProperties;
+import com.hacker.mercury.gateway.utils.WebFluxUtils;
 import org.dromara.common.core.utils.StringUtils;
-import org.dromara.gateway.config.properties.XssProperties;
-import org.dromara.gateway.utils.WebFluxUtils;
 import io.netty.buffer.ByteBufAllocator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;

@@ -6,6 +6,7 @@ import org.dromara.common.core.constant.HttpStatus;
 
 import java.io.Serial;
 import java.io.Serializable;
+import java.util.function.Supplier;
 
 /**
  * 响应信息主体
@@ -52,6 +53,10 @@ public class R<T> implements Serializable {
         return restResult(data, SUCCESS, "操作成功");
     }
 
+    public static <T> R<T> ok(Supplier<T> supplier) {
+        return restResult(supplier.get(), SUCCESS, "操作成功");
+    }
+
     public static <T> R<T> ok(String msg) {
         return restResult(null, SUCCESS, msg);
     }
@@ -62,6 +67,10 @@ public class R<T> implements Serializable {
 
     public static <T> R<T> fail() {
         return restResult(null, FAIL, "操作失败");
+    }
+
+    public static <T> R<T> fail(Supplier<T> supplier) {
+        return restResult(supplier.get(), FAIL, "操作失败");
     }
 
     public static <T> R<T> fail(String msg) {
@@ -93,7 +102,7 @@ public class R<T> implements Serializable {
     /**
      * 返回警告消息
      *
-     * @param msg 返回内容
+     * @param msg  返回内容
      * @param data 数据对象
      * @return 警告消息
      */
