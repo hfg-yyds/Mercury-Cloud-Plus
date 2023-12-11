@@ -205,4 +205,15 @@ public class TokenController {
         return R.ok(vo);
     }
 
+    /**
+     * 根据应用名称获取Token
+     *
+     * @param applicationName 应用名称
+     * @return Token
+     */
+    @GetMapping("/getTokenByApplication")
+    public R<String> getTokenByApplication(String applicationName) {
+        return R.ok();
+    }
+
 }
